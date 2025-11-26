@@ -17,11 +17,7 @@ int current;
 int stall;
 int accel;
 int max_speed;
-int tcools = (3089838.00 * pow(float(max_speed), -1.00161534)) * 1.5;
-int motor_microsteps = 64;
-
-int set_zero = 0;  // Set to 1 to set home position
-bool run_motor = false;
+int tcools;
 
 bool is_cm;
 

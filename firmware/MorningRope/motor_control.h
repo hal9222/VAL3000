@@ -20,8 +20,8 @@ uint16_t positionLabel;
 #define DRIVER_ADDRESS 0b00  // TMC2209 Driver address according to MS1 and MS2
 #define R_SENSE 0.11f        // R_SENSE for current calc.
 
-#define CLOSE_VELOCITY 400
-#define OPEN_VELOCITY -400
+#define CLOSE_VELOCITY 1500
+#define OPEN_VELOCITY -1500
 #define STOP_MOTOR_VELOCITY 0
 
 // function prototypes

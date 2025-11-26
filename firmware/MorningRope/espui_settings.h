@@ -72,7 +72,6 @@ void sliderPosition(Control* sender, int type) {
   target_percent = sender->value.toInt();
   target_position = (maximum_motor_position / 100) * target_percent;
   move_to_percent100ths(target_percent);
-  run_motor = true;
 }
 
 void buttonSetCloseCall(Control* sender, int type) {
