@@ -3,15 +3,18 @@ Wireless Stepper Motor Driver
 
 #### [Purchase it here](https://valarsystems.com/products/val3000). If sold out, PLEASE sign up to the "Notifi me when available" button, that's the only way we know to make more. If you don't sign up, we won't make more!
 
-Learn to program it using our Trinamic Guide.
 
+<div style="text-align: center;">
+<img src="/docs/media/7.jpg" width="600">
+</div>
+<img src="/docs/media/6.jpg" width="600">
 
 ## Overview
 The VAL3000 is the easiest, fastest, cheapest, safest, and most wireless way to spin a stepper motor.
 
 You can precisely control a motor's distance, speed, current, and stall characteristics within minutes of receiving it. No programming experience is required.
 
-If you want to program it yourself, you can find the code here.
+If you want to program it yourself, all code is included.
 
 The VAL3000 contains the following components in a very small package:
 
