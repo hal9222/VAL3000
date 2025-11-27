@@ -1,50 +1,41 @@
+// https://github.com/esp-arduino-libs/ESP32_Button
+
 #include <Arduino.h>
 #include "Button.h"
 
-static void onButtonPressDownCb(void *button_handle, void *usr_data) {
-    Serial.println("Button pressed down");
-}
-static void onButtonPressDownRepeatCb(void *button_handle, void *usr_data)
-{
-    Serial.println("Button press down repeat");
-}
-static void onButtonPressUpCb(void *button_handle, void *usr_data) {
-    Serial.println("Button press Up");
-}
 static void onButtonSingleClickCb(void *button_handle, void *usr_data) {
-    Serial.println("Button single click");
+  Serial.println("Button single click");
 }
-static void onButtonSingleClickRepeatCb(void *button_handle, void *usr_data)
-{
-    Serial.println("Button single click repeat");
+static void onButtonDoubleClickCb(void *button_handle, void *usr_data) {
+  Serial.println("Button double click");
 }
-static void onButtonLongPressStartCb(void *button_handle, void *usr_data)
-{
-    Serial.println("Button long press click");
+static void onButtonLongPressStartCb(void *button_handle, void *usr_data) {
+  Serial.println("Button long press click");
 }
 
-void setup()
-{
-    // put your setup code here, to run once:
-    Serial.begin(115200);
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
 
-    // initializing a button
-    Button *btn = new Button(GPIO_NUM_3, false);
+  // initializing a button
+  Button *btn1 = new Button(GPIO_NUM_3, false);
+  Button *btn2 = new Button(GPIO_NUM_4, false);
+  Button *btn3 = new Button(GPIO_NUM_7, false);
 
-    btn->attachPressDownEventCb(&onButtonPressDownCb, NULL);
-    btn->attachPressUpEventCb(&onButtonPressUpCb, NULL);
-    btn->attachPressDownEventCb(&onButtonPressDownRepeatCb, NULL);
-    btn->attachSingleClickEventCb(&onButtonSingleClickCb,NULL);
-    btn->attachSingleClickEventCb(&onButtonSingleClickRepeatCb,NULL);
+  btn1->attachSingleClickEventCb(&onButtonSingleClickCb, NULL);
+  btn1->attachDoubleClickEventCb(&onButtonDoubleClickCb, NULL);
+  btn1->attachLongPressStartEventCb(&onButtonLongPressStartCb, NULL);
 
-    btn->unregisterPressDownEventCb(&onButtonPressDownCb);
+  btn2->attachSingleClickEventCb(&onButtonSingleClickCb, NULL);
+  btn2->attachDoubleClickEventCb(&onButtonDoubleClickCb, NULL);
+  btn2->attachLongPressStartEventCb(&onButtonLongPressStartCb, NULL);
 
-    btn->attachLongPressStartEventCb(&onButtonLongPressStartCb, NULL);
+  btn3->attachSingleClickEventCb(&onButtonSingleClickCb, NULL);
+  btn3->attachDoubleClickEventCb(&onButtonDoubleClickCb, NULL);
+  btn3->attachLongPressStartEventCb(&onButtonLongPressStartCb, NULL);
 
-    btn->detachSingleClickEvent();
 }
 
-void loop()
-{
-    delay(10);
+void loop() {
+  delay(10);
 }
