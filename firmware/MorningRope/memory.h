@@ -1,5 +1,7 @@
 #include <Preferences.h>
 
+uint16_t positionSlider;
+
 bool stall_flag = false;
 
 bool stop_motor = false;

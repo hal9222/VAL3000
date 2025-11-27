@@ -1,3 +1,13 @@
+/* TO DO
+*
+* long press main buttons to override positions. Move until button pressed 
+* Press both buttons same time to set max position
+*
+* short press btn3 to change direction
+* long press btn3 to reset wifi
+*/
+
+
 #include <Arduino.h>
 #include "memory.h"
 #include "motor_control.h"

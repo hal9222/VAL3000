@@ -73,12 +73,12 @@ void disable_driver() {
 }
 
 void setCloseCall() {
-      Serial.println("Button Pressed");
-      motor_position = maximum_motor_position;
-      target_percent = 100;
-      Serial.print("set close position: ");
-      Serial.println(target_percent);
-  }
+  Serial.println("Button Pressed");
+  motor_position = maximum_motor_position;
+  target_percent = 100;
+  Serial.print("set close position: ");
+  Serial.println(target_percent);
+}
 
 /* Function that commands motor to move to position */
 void move_to_percent100ths(uint16_t percent100ths) {
@@ -147,7 +147,7 @@ void move_open() {
   printf("target_position close: %lu\n", target_position);  // TESTING
 
   printf("max_motor_position close: %lu\n", maximum_motor_position);  // TESTING
-  printf("target_percent close: %lu\n", target_percent);  // TESTING
+  printf("target_percent close: %lu\n", target_percent);              // TESTING
 
   stop_flag = false;
   is_closing = false;
@@ -207,6 +207,8 @@ void position_watcher_task(void *parameter) {
 notify_and_suspend:
     is_moving = false;
     preferences.putInt("motor_pos", motor_position);
+    target_percent = ((float)motor_position / (float)maximum_motor_position) * 100;
+    ESPUI.updateSlider(positionSlider, target_percent);
     vTaskDelete(NULL);
   }
 }

@@ -6,7 +6,7 @@ uint16_t speedMax;
 uint16_t accelMax;
 String display_wifi;
 
-uint16_t positionSlider;
+
 
 void numberMaxStepsCall(Control* sender, int type) {
   maximum_motor_position = sender->value.toInt();
