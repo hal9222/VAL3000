@@ -16,6 +16,10 @@ uint16_t positionLabel;
 #define STALLGUARD_PIN 1
 #define INDEX_PIN 0
 
+#define BUTTON_1_PIN GPIO_NUM_3
+#define BUTTON_2_PIN GPIO_NUM_4
+#define WIFI_RESET_PIN GPIO_NUM_7
+
 #define DRIVER_ADDRESS 0b00  // TMC2209 Driver address according to MS1 and MS2
 #define R_SENSE 0.11f        // R_SENSE for current calc.
 

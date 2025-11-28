@@ -7850,7 +7850,7 @@
 	)
 	(wire
 		(pts
-			(xy 328.93 151.13) (xy 328.93 157.48)
+			(xy 328.93 149.86) (xy 328.93 157.48)
 		)
 		(stroke
 			(width 0)
@@ -8340,7 +8340,7 @@
 	)
 	(wire
 		(pts
-			(xy 321.31 148.59) (xy 328.93 148.59)
+			(xy 321.31 147.32) (xy 328.93 147.32)
 		)
 		(stroke
 			(width 0)
@@ -8840,7 +8840,7 @@
 	)
 	(wire
 		(pts
-			(xy 321.31 151.13) (xy 328.93 151.13)
+			(xy 321.31 149.86) (xy 328.93 149.86)
 		)
 		(stroke
 			(width 0)
@@ -9372,7 +9372,7 @@
 	)
 	(global_label "USER_4{slash}END_2"
 		(shape input)
-		(at 328.93 148.59 0)
+		(at 328.93 147.32 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9382,7 +9382,7 @@
 		)
 		(uuid "7fa311ac-c7c3-41cc-ba04-62fafd715c90")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 346.3084 148.59 0)
+			(at 346.3084 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21855,16 +21855,16 @@
 	)
 	(symbol
 		(lib_id "2025-11-27_21-36-42:OSTVN02A150")
-		(at 321.31 151.13 180)
+		(at 321.31 147.32 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "eca76757-3884-47ae-9bc8-27b86ce87450")
 		(property "Reference" "J5"
-			(at 312.42 140.97 0)
+			(at 312.42 157.48 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -21872,7 +21872,7 @@
 			)
 		)
 		(property "Value" "OSTVN02A150"
-			(at 312.42 143.51 0)
+			(at 312.42 154.94 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -21880,7 +21880,7 @@
 			)
 		)
 		(property "Footprint" "footprints:CONN_OSTVN02A150_OST"
-			(at 321.31 151.13 0)
+			(at 321.31 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21890,7 +21890,7 @@
 			)
 		)
 		(property "Datasheet" "OSTVN02A150"
-			(at 321.31 151.13 0)
+			(at 321.31 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21900,7 +21900,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 321.31 151.13 0)
+			(at 321.31 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)

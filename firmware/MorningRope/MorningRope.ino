@@ -12,9 +12,7 @@
 //#include "button_settings.h"
 #include <Button.h>
 
-#define BUTTON_1_PIN GPIO_NUM_3
-#define BUTTON_2_PIN GPIO_NUM_4
-#define WIFI_RESET_PIN GPIO_NUM_7
+
 
 #include "memory.h"
 #include "motor_control.h"
@@ -23,15 +21,44 @@
 
 #include <ArduinoOTA.h>  // For enabling over-the-air updates
 
-static void onButtonSingleClickCb(void *button_handle, void *usr_data) {
+
+static void btn1PressDownCb(void *button_handle, void *usr_data) {
+    Serial.println("Button pressed down");
+}
+static void btn1SingleClickCb(void *button_handle, void *usr_data) {
   Serial.println("Button single click");
 }
-static void onButtonDoubleClickCb(void *button_handle, void *usr_data) {
+static void btn1DoubleClickCb(void *button_handle, void *usr_data) {
   Serial.println("Button double click");
 }
-static void onButtonLongPressStartCb(void *button_handle, void *usr_data) {
+static void btn1LongPressStartCb(void *button_handle, void *usr_data) {
   Serial.println("Button long press click");
 }
+
+static void btn2PressDownCb(void *button_handle, void *usr_data) {
+    Serial.println("Button pressed down");
+}
+static void btn2SingleClickCb(void *button_handle, void *usr_data) {
+  Serial.println("Button single click");
+}
+static void btn2DoubleClickCb(void *button_handle, void *usr_data) {
+  Serial.println("Button double click");
+}
+static void btn2LongPressStartCb(void *button_handle, void *usr_data) {
+  Serial.println("Button long press click");
+}
+
+
+static void btn3SingleClickCb(void *button_handle, void *usr_data) {
+  Serial.println("Button single click");
+}
+static void btn3DoubleClickCb(void *button_handle, void *usr_data) {
+  Serial.println("Button double click");
+}
+static void btn3LongPressStartCb(void *button_handle, void *usr_data) {
+  Serial.println("Button long press click");
+}
+
 
 void setup() {
 
@@ -42,17 +69,19 @@ void setup() {
   Button btn2 = Button(BUTTON_2_PIN, false);    //BUTTON_1_PIN
   Button btn3 = Button(WIFI_RESET_PIN, false);  //BUTTON_1_PIN
 
-  btn1.attachSingleClickEventCb(&onButtonSingleClickCb, NULL);
-  btn1.attachDoubleClickEventCb(&onButtonDoubleClickCb, NULL);
-  btn1.attachLongPressStartEventCb(&onButtonLongPressStartCb, NULL);
+  btn1.attachPressDownEventCb(&btn1PressDownCb, NULL);
+  btn1.attachSingleClickEventCb(&btn1SingleClickCb, NULL);
+  btn1.attachDoubleClickEventCb(&btn1DoubleClickCb, NULL);
+  btn1.attachLongPressStartEventCb(&btn1LongPressStartCb, NULL);
 
-  btn2.attachSingleClickEventCb(&onButtonSingleClickCb, NULL);
-  btn2.attachDoubleClickEventCb(&onButtonDoubleClickCb, NULL);
-  btn2.attachLongPressStartEventCb(&onButtonLongPressStartCb, NULL);
+  btn2.attachPressDownEventCb(&btn2PressDownCb, NULL);
+  btn2.attachSingleClickEventCb(&btn2SingleClickCb, NULL);
+  btn2.attachDoubleClickEventCb(&btn2DoubleClickCb, NULL);
+  btn2.attachLongPressStartEventCb(&btn2LongPressStartCb, NULL);
 
-  btn3.attachSingleClickEventCb(&onButtonSingleClickCb, NULL);
-  btn3.attachDoubleClickEventCb(&onButtonDoubleClickCb, NULL);
-  btn3.attachLongPressStartEventCb(&onButtonLongPressStartCb, NULL);
+  btn3.attachSingleClickEventCb(&btn3SingleClickCb, NULL);
+  btn3.attachDoubleClickEventCb(&btn3DoubleClickCb, NULL);
+  btn3.attachLongPressStartEventCb(&btn3LongPressStartCb, NULL);
 
   Serial1.begin(115200, SERIAL_8N1, RX_PIN, TX_PIN);  // ESP32 can use any pins to Serial
 
@@ -78,6 +107,9 @@ void setup() {
 
 // int lastStateBtn3 = LOW;  // the previous state from the input pin
 // int currentStateBtn3;     // the current reading from the input pin
+
+
+
 
 void loop() {
   dnsServer.processNextRequest();  // Process request for ESPUI
