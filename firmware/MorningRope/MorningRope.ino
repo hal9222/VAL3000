@@ -23,23 +23,41 @@
 
 
 static void btn1PressDownCb(void *button_handle, void *usr_data) {
-    Serial.println("Button pressed down");
+  Serial.println("Button pressed down");
+  if (is_moving) {
+    stop_flag = true;
+  }
 }
 static void btn1SingleClickCb(void *button_handle, void *usr_data) {
   Serial.println("Button single click");
+  if (is_moving) {
+    stop_flag = true;
+  } else {
+    move_to_percent100ths(0);
+  }
 }
 static void btn1DoubleClickCb(void *button_handle, void *usr_data) {
   Serial.println("Button double click");
+  //
 }
 static void btn1LongPressStartCb(void *button_handle, void *usr_data) {
   Serial.println("Button long press click");
+  // Override position. Turn motor until button is pressed. (Set to close position once button is pressed. If this is the close direction?)
 }
 
 static void btn2PressDownCb(void *button_handle, void *usr_data) {
-    Serial.println("Button pressed down");
+  Serial.println("Button pressed down");
+  if (is_moving) {
+    stop_flag = true;
+  }
 }
 static void btn2SingleClickCb(void *button_handle, void *usr_data) {
   Serial.println("Button single click");
+  if (is_moving) {
+    stop_flag = true;
+  } else {
+    move_to_percent100ths(100);
+  }
 }
 static void btn2DoubleClickCb(void *button_handle, void *usr_data) {
   Serial.println("Button double click");
@@ -51,12 +69,34 @@ static void btn2LongPressStartCb(void *button_handle, void *usr_data) {
 
 static void btn3SingleClickCb(void *button_handle, void *usr_data) {
   Serial.println("Button single click");
+  // Set to close position
+  motor_position = maximum_motor_position;
+  target_percent = 100;
+  ESPUI.updateSlider(positionSlider, target_percent);
+  Serial.print("set close position: ");
+  Serial.println(target_percent);
 }
 static void btn3DoubleClickCb(void *button_handle, void *usr_data) {
   Serial.println("Button double click");
+  // Change direction
+  if (opening_direction == 0) {
+    opening_direction = 1;
+    preferences.putInt("open_dir", opening_direction);
+    driver.shaft(true);
+  } else {
+    Serial.print("Inactive");
+    opening_direction = 0;
+    preferences.putInt("open_dir", opening_direction);
+    driver.shaft(false);
+  }
 }
 static void btn3LongPressStartCb(void *button_handle, void *usr_data) {
   Serial.println("Button long press click");
+  //Reset wifi
+  preferences.putString("ssid", "NOT_SET");
+  preferences.putString("pass", "NOT_SET");
+  preferences.end();
+  ESP.restart();
 }
 
 
@@ -98,60 +138,8 @@ void setup() {
   Serial.println("COMPLETE SETUP");
 }
 
-// // Variables will change:
-// int lastStateBtn1 = LOW;  // the previous state from the input pin
-// int currentStateBtn1;     // the current reading from the input pin
-
-// int lastStateBtn2 = LOW;  // the previous state from the input pin
-// int currentStateBtn2;     // the current reading from the input pin
-
-// int lastStateBtn3 = LOW;  // the previous state from the input pin
-// int currentStateBtn3;     // the current reading from the input pin
-
-
-
-
 void loop() {
   dnsServer.processNextRequest();  // Process request for ESPUI
   ArduinoOTA.handle();             // Handles a code update request
-  //wifiResetButton();
-
-  // // read the state of the switch/button:
-  // currentStateBtn1 = digitalRead(BUTTON_1_PIN);
-  // currentStateBtn2 = digitalRead(BUTTON_2_PIN);
-  // currentStateBtn3 = digitalRead(WIFI_RESET_PIN);
-
-  // if (lastStateBtn1 == HIGH && currentStateBtn1 == LOW) {
-  //   Serial.println("Btn1 is pressed");
-  //   if (is_moving) {
-  //     stop_flag = true;
-  //   } else {
-  //     move_to_percent100ths(0);
-  //   }
-  // }
-
-  // if (lastStateBtn2 == HIGH && currentStateBtn2 == LOW) {
-  //   Serial.println("Btn2 is pressed");
-  //   if (is_moving) {
-  //     stop_flag = true;
-  //   } else {
-  //     move_to_percent100ths(100);
-  //   }
-  // }
-
-  // if (lastStateBtn3 == HIGH && currentStateBtn3 == LOW) {
-  //   Serial.println("Btn3 is pressed");
-  //   if (is_moving) {
-  //     // Do nothing
-  //   } else {
-  //     setCloseCall();
-  //     ESPUI.updateSlider(positionSlider, target_percent);
-  //   }
-  // }
-
-  // // save the the last state
-  // lastStateBtn1 = currentStateBtn1;
-  // lastStateBtn2 = currentStateBtn2;
-  // lastStateBtn3 = currentStateBtn3;
   delay(10);
 }

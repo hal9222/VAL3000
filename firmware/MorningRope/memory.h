@@ -57,7 +57,6 @@ void load_preferences() {
 
   Serial.println("LOADING PREFERENCES");
 
-  wifi_set = preferences.getInt("wifi_set", 0);
   ssid = preferences.getString("ssid", "NOT_SET");
   password = preferences.getString("pass", "NOT_SET");
   maximum_motor_position = preferences.getInt("max_motor_pos", 2695); // defaults to 20 inches

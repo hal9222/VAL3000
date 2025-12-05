@@ -145,7 +145,6 @@ void buttonSaveNetworkCall(Control* sender, int type) {
 
 void buttonClearNetworkCall(Control* sender, int type) {
   if (type == B_UP) {
-    preferences.putInt("wifi_set", 0);
     preferences.putString("ssid", "NOT_SET");
     preferences.putString("pass", "NOT_SET");
     preferences.end();
